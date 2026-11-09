@@ -62,6 +62,8 @@ python -m venv .venv
 
 ## 5 报告与自拟测试
 
+可下载[学生实验报告模板（Word）](materials/实验二_学生实验报告模板.docx)组织完整报告；自动评分仍读取REPORT.md和AI_LOG.md，请将对应内容同步到这两个文件。
+
 首次复制REPORT_TEMPLATE.md为REPORT.md、AI_LOG_TEMPLATE.md为AI_LOG.md；已有内容时不要重复覆盖。报告写明原理与手算、结果分析、反例与验证、局限，至少300字/字符量级；AI记录至少120字符并保留需求、建议与采纳、验证证据三节。未使用AI如实写独立实现过程。
 
 在student_tests/test_my_case.py写自己的反例，含明确assert，实际调用实验函数；运行python -m pytest student_tests -q。不能只写assert True或照抄文件存在检查。
