@@ -2,7 +2,7 @@
 import argparse,ast,json,os,subprocess,sys,xml.etree.ElementTree as ET
 from pathlib import Path
 
-GROUPS=[('environment',5),('t',20),('s',15),('connect',20),('disconnect',15),('integration',10),('student_submission',5),('delivery',10)]
+GROUPS=[('environment',4),('t',14),('s',10),('connect',14),('disconnect',10),('integration',8),('student_submission',4),('delivery',6),('report',30)]
 
 def grade(workspace,report_dir,local=False,image='lab02-grader'):
     root=Path(workspace).resolve();out=Path(report_dir).resolve();out.mkdir(parents=True,exist_ok=True)
@@ -34,10 +34,12 @@ def grade(workspace,report_dir,local=False,image='lab02-grader'):
         passed=sum(not any(c.find(tag) is not None for tag in ('failure','error','skipped')) for c in cases) if valid else 0
         parts[name]={'score':round(points*passed/expected,2),'max':points,'passed':passed,'total':expected,
             'status':'completed' if valid else 'student_execution_error','exit_code':run.returncode}
-    report={'status':'completed','score':round(sum(v['score'] for v in parts.values()),2),'max_score':100,'parts':parts,
+    experiment_score=round(sum(v['score'] for k,v in parts.items() if k!='report'),2)
+    report_score=parts['report']['score']
+    report={'experiment_score':experiment_score,'report_score':report_score,'status':'completed','score':round(sum(v['score'] for v in parts.values()),2),'max_score':100,'parts':parts,
         'evaluation':'自动分仅评价公开可执行规则，报告与AI记录只评价结构及交付完整性'}
     (out/'grade_report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
-    text='自动评分 '+str(report['score'])+'/100\n\n'+'\n'.join(f'{k}: {v["score"]}/{v["max"]}，{v["passed"]}/{v["total"]}，{v["status"]}' for k,v in parts.items())
+    text=f'实验 {experiment_score}/70，报告 {report_score}/30，总分 '+str(report['score'])+'/100\n\n'+'\n'.join(f'{k}: {v["score"]}/{v["max"]}，{v["passed"]}/{v["total"]}，{v["status"]}' for k,v in parts.items())
     (out/'grade_result.txt').write_text(text,encoding='utf-8');print(text);return report
 
 if __name__=='__main__':
