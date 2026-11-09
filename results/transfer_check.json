@@ -1,0 +1,249 @@
+{
+  "checks": [
+    {
+      "connection": "C1",
+      "input_frame_id": 0,
+      "available_frame_id": 1,
+      "source": [
+        0,
+        1
+      ],
+      "destination": [
+        1,
+        5
+      ],
+      "expected": 3,
+      "actual": 3
+    },
+    {
+      "connection": "C1",
+      "input_frame_id": 0,
+      "available_frame_id": 1,
+      "source": [
+        1,
+        5
+      ],
+      "destination": [
+        0,
+        1
+      ],
+      "expected": 116,
+      "actual": 116
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 0,
+      "available_frame_id": 1,
+      "source": [
+        0,
+        2
+      ],
+      "destination": [
+        1,
+        6
+      ],
+      "expected": 6,
+      "actual": 6
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 0,
+      "available_frame_id": 1,
+      "source": [
+        1,
+        6
+      ],
+      "destination": [
+        0,
+        2
+      ],
+      "expected": 119,
+      "actual": 119
+    },
+    {
+      "connection": "C1",
+      "input_frame_id": 1,
+      "available_frame_id": 2,
+      "source": [
+        0,
+        1
+      ],
+      "destination": [
+        1,
+        5
+      ],
+      "expected": 20,
+      "actual": 20
+    },
+    {
+      "connection": "C1",
+      "input_frame_id": 1,
+      "available_frame_id": 2,
+      "source": [
+        1,
+        5
+      ],
+      "destination": [
+        0,
+        1
+      ],
+      "expected": 133,
+      "actual": 133
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 1,
+      "available_frame_id": 2,
+      "source": [
+        0,
+        2
+      ],
+      "destination": [
+        1,
+        6
+      ],
+      "expected": 23,
+      "actual": 23
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 1,
+      "available_frame_id": 2,
+      "source": [
+        1,
+        6
+      ],
+      "destination": [
+        0,
+        2
+      ],
+      "expected": 136,
+      "actual": 136
+    },
+    {
+      "connection": "C1",
+      "input_frame_id": 2,
+      "available_frame_id": 3,
+      "source": [
+        0,
+        1
+      ],
+      "destination": [
+        1,
+        5
+      ],
+      "expected": 37,
+      "actual": 37
+    },
+    {
+      "connection": "C1",
+      "input_frame_id": 2,
+      "available_frame_id": 3,
+      "source": [
+        1,
+        5
+      ],
+      "destination": [
+        0,
+        1
+      ],
+      "expected": 150,
+      "actual": 150
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 2,
+      "available_frame_id": 3,
+      "source": [
+        0,
+        2
+      ],
+      "destination": [
+        1,
+        6
+      ],
+      "expected": 40,
+      "actual": 40
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 2,
+      "available_frame_id": 3,
+      "source": [
+        1,
+        6
+      ],
+      "destination": [
+        0,
+        2
+      ],
+      "expected": 153,
+      "actual": 153
+    },
+    {
+      "connection": "C1",
+      "input_frame_id": 3,
+      "available_frame_id": 4,
+      "source": [
+        0,
+        1
+      ],
+      "destination": [
+        1,
+        5
+      ],
+      "expected": 54,
+      "actual": 54
+    },
+    {
+      "connection": "C1",
+      "input_frame_id": 3,
+      "available_frame_id": 4,
+      "source": [
+        1,
+        5
+      ],
+      "destination": [
+        0,
+        1
+      ],
+      "expected": 167,
+      "actual": 167
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 3,
+      "available_frame_id": 4,
+      "source": [
+        0,
+        2
+      ],
+      "destination": [
+        1,
+        6
+      ],
+      "expected": 57,
+      "actual": 57
+    },
+    {
+      "connection": "C2",
+      "input_frame_id": 3,
+      "available_frame_id": 4,
+      "source": [
+        1,
+        6
+      ],
+      "destination": [
+        0,
+        2
+      ],
+      "expected": 170,
+      "actual": 170
+    }
+  ],
+  "mismatches": 0,
+  "conflict_rejected": true,
+  "release_ok": true,
+  "survivor_ok": true,
+  "latency_frames": 1
+}
